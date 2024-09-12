@@ -11,8 +11,9 @@ public class Menu {
             System.out.println("""
                     Выберете действие, и укажите его номер:\s
                     1. Шифрование
-                    2. Расшифровка
-                    3. Выход""");
+                    2. Расшифровка с ключом
+                    3. Расшифровка без ключа (Метод BrutForce)
+                    4. Выход""");
 
             String choice = scanner.nextLine();
             int choiceToInt = 0;
@@ -59,7 +60,7 @@ public class Menu {
                         }
                     }
 
-                    System.out.println("Укажите путь, куда следует записать зашифрованый файл:");
+                    System.out.println("Укажите путь, куда следует записать зашифрованный файл:");
                     pathToEncryptFile = scanner.nextLine();
 
                     FileManager.writeFile(CeasarCihper.encrypt(FileManager.readFile(pathToFile), validKey), pathToEncryptFile);
@@ -91,13 +92,30 @@ public class Menu {
                         }
                     }
 
-                    System.out.println("Укажите путь, куда следует записать зашифрованый файл:");
+                    System.out.println("Укажите путь, куда следует записать зашифрованный файл:");
                     pathToDecryptFile = scanner.nextLine();
 
                     FileManager.writeFile(CeasarCihper.decrypt(FileManager.readFile(pathToFile), validKey), pathToDecryptFile);
                     break;
 
                 case (3):
+                    while (!truePathToFile){
+                        System.out.println("Укажите путь к зашифрованному файлу:");
+                        pathToFile = scanner.nextLine();
+
+                        if(Files.isRegularFile(Path.of(pathToFile))){
+                            truePathToFile = true;
+                        }else {
+                            System.out.println("Файл не найден");
+                        }
+                    }
+
+                    System.out.println("Укажите путь, куда следует записать зашифрованный файл:");
+                    pathToDecryptFile = scanner.nextLine();
+
+                    FileManager.writeFile(CeasarCihper.bruteForce(pathToFile), pathToDecryptFile);
+
+                case (4):
                     exit = true;
                     break;
             }
