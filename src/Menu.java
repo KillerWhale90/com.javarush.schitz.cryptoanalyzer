@@ -64,6 +64,9 @@ public class Menu {
                     pathToEncryptFile = scanner.nextLine();
 
                     FileManager.writeFile(CeasarCihper.encrypt(FileManager.readFile(pathToFile), validKey), pathToEncryptFile);
+
+                    System.out.println("Текст успешно зашифрован!");
+                    System.out.println("-*-*-*-*-*-*-*-*-*-*-*-*-*-");
                     break;
 
                 case (2):
@@ -96,6 +99,9 @@ public class Menu {
                     pathToDecryptFile = scanner.nextLine();
 
                     FileManager.writeFile(CeasarCihper.decrypt(FileManager.readFile(pathToFile), validKey), pathToDecryptFile);
+
+                    System.out.println("Текст успешно расшифрован!");
+                    System.out.println("-*-*-*-*-*-*-*-*-*-*-*-*-*-");
                     break;
 
                 case (3):
@@ -114,6 +120,10 @@ public class Menu {
                     pathToDecryptFile = scanner.nextLine();
 
                     FileManager.writeFile(CeasarCihper.bruteForce(pathToFile), pathToDecryptFile);
+
+                    System.out.println("Текст успешно расшифрован!");
+                    System.out.println("-*-*-*-*-*-*-*-*-*-*-*-*-*-");
+                    break;
 
                 case (4):
                     exit = true;

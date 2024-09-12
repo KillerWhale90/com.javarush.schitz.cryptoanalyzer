@@ -1,7 +1,6 @@
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.Arrays;
 import java.util.List;
 
 public class CeasarCihper {
@@ -15,12 +14,8 @@ public class CeasarCihper {
         UtilMethods.copyAlphabet(Alphabet.RUSSIAN_SMALL, ENCRYPT_ALPHABET);
         UtilMethods.copyAlphabet(Alphabet.RUSSIAN_BIG, ENCRYPT_ALPHABET_BIG);
 
-        System.out.println(Arrays.toString(Alphabet.RUSSIAN_BIG));
-
         UtilMethods.shiftArray(ENCRYPT_ALPHABET, shift);
         UtilMethods.shiftArray(ENCRYPT_ALPHABET_BIG, shift);
-
-        System.out.println(Arrays.toString(ENCRYPT_ALPHABET_BIG));
 
         for (int i = 0; i < text.length(); i++) {
             for (int j = 0; j < Alphabet.RUSSIAN_SMALL.length; j++) {
@@ -34,9 +29,6 @@ public class CeasarCihper {
             }
         }
 
-        System.out.println("Текст успешно зашифрован!");
-        System.out.println("-*-*-*-*-*-*-*-*-*-*-*-*-*-");
-
         return String.valueOf(textAsCharArray);
     }
     public static String decrypt(String encryptedText, int shift) {
@@ -46,12 +38,8 @@ public class CeasarCihper {
         UtilMethods.copyAlphabet(Alphabet.RUSSIAN_SMALL, ENCRYPT_ALPHABET);
         UtilMethods.copyAlphabet(Alphabet.RUSSIAN_BIG, ENCRYPT_ALPHABET_BIG);
 
-        System.out.println(Arrays.toString(Alphabet.RUSSIAN_BIG));
-
         UtilMethods.shiftArray(ENCRYPT_ALPHABET, shift);
         UtilMethods.shiftArray(ENCRYPT_ALPHABET_BIG, shift);
-
-        System.out.println(Arrays.toString(ENCRYPT_ALPHABET_BIG));
 
         for (int i = 0; i < encryptedText.length(); i++) {
             for (int j = 0; j < Alphabet.RUSSIAN_SMALL.length; j++) {
@@ -64,9 +52,6 @@ public class CeasarCihper {
                 }
             }
         }
-
-        System.out.println("Текст успешно расшифрован!");
-        System.out.println("-*-*-*-*-*-*-*-*-*-*-*-*-*-");
 
         return String.valueOf(textAsCharArray);
     }
