@@ -116,7 +116,7 @@ public class Menu {
                         }
                     }
 
-                    System.out.println("Укажите путь, куда следует записать зашифрованный файл:");
+                    System.out.println("Укажите путь, куда следует записать расшифрованный файл:");
                     pathToDecryptFile = scanner.nextLine();
 
                     FileManager.writeFile(CeasarCihper.bruteForce(pathToFile), pathToDecryptFile);
