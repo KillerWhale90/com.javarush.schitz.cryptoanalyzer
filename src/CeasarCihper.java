@@ -65,7 +65,6 @@ public class CeasarCihper {
             listOfMostPopularWords = Files.readAllLines(Path.of("res", "most_popular_words.txt"));
         }
 
-//        List<String> listOfMostPopularWords = Files.readAllLines(Path.of("com.javarush.schitz.cryptoanalyzer-master","res", "most_popular_words.txt"));
         text = Files.readAllLines(Path.of(pathToFile));
         String encryptText = text.getFirst();
 
