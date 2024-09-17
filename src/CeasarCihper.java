@@ -57,7 +57,7 @@ public class CeasarCihper {
         return String.valueOf(textAsCharArray);
     }
     public static String bruteForce(String pathToFile) throws IOException {
-        List<String> listOfMostPopularWords = Files.readAllLines(Path.of("com.javarush.schitz.cryptoanalyzer-master" + "res" + "most_popular_words.txt"));
+        List<String> listOfMostPopularWords = Files.readAllLines(Path.of("com.javarush.schitz.cryptoanalyzer-master","res", "most_popular_words.txt"));
         text = Files.readAllLines(Path.of(pathToFile));
         String encryptText = text.getFirst();
 
