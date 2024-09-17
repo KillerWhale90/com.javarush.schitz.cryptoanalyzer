@@ -9,7 +9,7 @@ public class UtilMethods {
         }
     }
     public static void shiftArray(char[] encryptAlphabet, int shift){
-        // Сдвиг массива симолов на заданное число значений
+        // Сдвиг массива символов на заданное число значений
         for (int i = 0; i < encryptAlphabet.length / 2; i++) {
             char tmp = encryptAlphabet[i];
             encryptAlphabet[i] = encryptAlphabet[encryptAlphabet.length - i - 1];
