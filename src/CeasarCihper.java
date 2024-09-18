@@ -1,7 +1,6 @@
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.Comparator;
 import java.util.List;
 
 public class CeasarCihper {
@@ -60,22 +59,13 @@ public class CeasarCihper {
         List<String> listOfMostPopularWords;
 
         try{
-            listOfMostPopularWords = Files.readAllLines(Path.of("com.javarush.schitz.cryptoanalyzer-master","res", "most_popular_words.txt"));
+            listOfMostPopularWords = Files.readAllLines(Path.of("com.javarush.schitz.cryptoanalyzer-master","res","most_popular_words.txt"));
         }catch (IOException ioException){
             listOfMostPopularWords = Files.readAllLines(Path.of("res", "most_popular_words.txt"));
         }
 
         text = Files.readAllLines(Path.of(pathToFile));
         String encryptText = text.getFirst();
-
-//        Временное решение по удаления из списка слишком коротких слов
-//        ------------------------
-        listOfMostPopularWords.sort(Comparator.comparingInt(String::length));
-
-        for (int i = 0; i < 53; i++) {
-            listOfMostPopularWords.removeFirst();
-        }
-//        ------------------------
 
         for (int i = 0; i < Alphabet.RUSSIAN_SMALL.length; i++) {
             String[] words = decrypt(encryptText, i).split(" ");
